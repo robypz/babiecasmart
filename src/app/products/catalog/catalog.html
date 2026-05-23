@@ -1,84 +1,37 @@
-<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 px-4">
     <!-- Header Section -->
     <header class="mb-12">
         <h1 class="font-display-lg text-display-lg text-on-surface mb-4">Catálogo de Soluciones</h1>
         <p class="font-body-lg text-body-lg text-secondary max-w-2xl">
-            Tecnología diseñada para entender y responder a tus necesidades. Explora nuestro ecosistema modular para un
-            hogar más seguro, saludable y autónomo.
+            Tecnología diseñada para entender y responder a tus necesidades. Explora nuestro ecosistema modular para
+            un hogar más seguro, saludable y autónomo.
         </p>
     </header>
     <!-- Category Filter -->
     <nav aria-label="Filtros de catálogo" class="flex flex-wrap gap-3 mb-12">
+        @for (category of categories(); track $index) {
         <button
-            class="filter-btn active-filter px-6 py-3 rounded-full font-label-md text-label-md border-2 border-primary-container smooth-transition hover:scale-105 active:scale-95"
-            onclick="filterCatalog('all')">
-            Todos
+            class="filter-btn hover:bg-primary hover:text-on-primary px-6 py-3 rounded-full font-label-md text-label-md border-2 border-primary-container smooth-transition hover:scale-105 active:scale-95">
+            {{ category.name }}
         </button>
-        <button
-            class="filter-btn bg-white text-on-surface-variant px-6 py-3 rounded-full font-label-md text-label-md border-2 border-surface-container-high smooth-transition hover:border-primary-container hover:scale-105 active:scale-95"
-            onclick="filterCatalog('seguridad')">
-            Seguridad
-        </button>
-        <button
-            class="filter-btn bg-white text-on-surface-variant px-6 py-3 rounded-full font-label-md text-label-md border-2 border-surface-container-high smooth-transition hover:border-primary-container hover:scale-105 active:scale-95"
-            onclick="filterCatalog('confort')">
-            Confort
-        </button>
-        <button
-            class="filter-btn bg-white text-on-surface-variant px-6 py-3 rounded-full font-label-md text-label-md border-2 border-surface-container-high smooth-transition hover:border-primary-container hover:scale-105 active:scale-95"
-            onclick="filterCatalog('salud')">
-            Salud y Entorno
-        </button>
-        <button
-            class="filter-btn bg-white text-on-surface-variant px-6 py-3 rounded-full font-label-md text-label-md border-2 border-surface-container-high smooth-transition hover:border-primary-container hover:scale-105 active:scale-95"
-            onclick="filterCatalog('proteccion')">
-            Protección Activa
-        </button>
-        <button
-            class="filter-btn bg-white text-on-surface-variant px-6 py-3 rounded-full font-label-md text-label-md border-2 border-surface-container-high smooth-transition hover:border-primary-container hover:scale-105 active:scale-95"
-            onclick="filterCatalog('gestion')">
-            Gestión Centralizada
-        </button>
+        }
+
     </nav>
     <!-- Products Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="catalog-grid">
-        <!-- Category: Seguridad -->
-        <article class="catalog-item bg-white rounded-xl overflow-hidden card-shadow smooth-transition group"
-            data-category="seguridad">
-            <div class="h-64 overflow-hidden relative">
-                <img alt="Cámara de seguridad HD"
-                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvy4MMcDLj02W6-AFNnNSTDC6gHaMFreOHJqUJ327zr1kGK-SA2b1aIJQ-llScKn9HHrLX1NSK3l8uN65sBxt79npKZLQO24YwKcBwNJgGOtsc2PhHjDqhNJaaY5v2PSmiqH0cjeLdNwBAmDuR_Zjsk2hzutH0hrUpRfbkiEqgryPxF5DfVsok8HrOGv7C8minuoDuZLqAneWWLFTmiUOmuC_kSlTQ8tDO47JGturSNJZWkqxiBJOPML4NJgyHl4unCn_D8C1gSYTc" />
-                <span
-                    class="absolute top-4 left-4 bg-primary-container text-white px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Seguridad</span>
-            </div>
-            <div class="p-6 flex flex-col h-full">
-                <h3 class="font-headline-md text-headline-md mb-2">Cámaras HD 1080p</h3>
-                <p class="font-body-md text-body-md text-secondary mb-6 flex-grow">Visión nocturna avanzada, detección
-                    de movimiento y audio bidireccional para mantener tu hogar siempre bajo control.</p>
-                <div class="flex items-center justify-between">
-                    <button
-                        class="bg-primary-container text-white px-6 py-3 rounded-lg font-label-md text-label-md smooth-transition hover:bg-primary active:scale-95 min-h-[48px]">Añadir</button>
-                    <button
-                        class="text-secondary hover:text-primary font-label-md text-label-md flex items-center gap-2">
-                        Ver detalles <span class="material-symbols-outlined">arrow_forward</span>
-                    </button>
-                </div>
-            </div>
-        </article>
+        @for (product of products(); track $index) {
         <article class="catalog-item bg-white rounded-xl overflow-hidden card-shadow smooth-transition group"
             data-category="seguridad">
             <div class="h-64 overflow-hidden relative">
                 <img alt="Cerradura inteligente"
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmM6AuLPoDQIkMakPO9B3WgK_KZ3TftFsw7wKYWBphgVky0iToxoIuLJerZBoy-zjzvTEI2XTo86YwR2v36smHg4cXo-0VNPed5bCqcCvXtFmPMwoMCG6nSYPCBtoYNmVkXLWzo1eJCQlBjQ7qrPEt1GQmNPyNRQv1HD30wJQGDfF2rLZUjeisIiSLXQwjhODXU5YAbBqQnbYKEiVbG0TuNAe-ivBEDNiGg7XZ_htyvPUK_eBykpCjFuiHjEzheHsBpRvYkgQd1tW-" />
-                <span
-                    class="absolute top-4 left-4 bg-primary-container text-white px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Seguridad</span>
+                    [src]="'/images/products/'+product"
+                    class="absolute top-4 left-4 bg-primary-container text-white px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider">Seguridad
             </div>
             <div class="p-6">
                 <h3 class="font-headline-md text-headline-md mb-2">Accesos Inteligentes</h3>
-                <p class="font-body-md text-body-md text-secondary mb-6">Teclados numéricos y cerraduras inteligentes
-                    con control remoto. Gestión de usuarios y registros de entrada en tiempo real.</p>
+                <p class="font-body-md text-body-md text-secondary mb-6">Teclados numéricos y cerraduras
+                    inteligentes con control remoto. Gestión de usuarios y registros de entrada en tiempo real.</p>
                 <div class="flex items-center justify-between">
                     <button
                         class="bg-primary-container text-white px-6 py-3 rounded-lg font-label-md text-label-md smooth-transition hover:bg-primary active:scale-95 min-h-[48px]">Añadir</button>
@@ -89,239 +42,7 @@
                 </div>
             </div>
         </article>
-        <!-- Category: Confort -->
-        <article class="catalog-item bg-white rounded-xl overflow-hidden card-shadow smooth-transition group"
-            data-category="confort">
-            <div class="h-64 overflow-hidden relative">
-                <img alt="Sistemas DIN Rail"
-                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBlJmoLrSzDDuxA5pQeXNIcUUmZ-2I7E8Ycgayz6e2XEbKGcqXcVvQ00lmPwB-cAKidVQeyA5MLlEA4_coW9-echGvTuWccA5iaiRrfwEQnkZkAZhzNANTE0t4SR52CFqIielBSU7pvA6xzYa3Khbk5vH47zt3IKD7TiyxJrSj0O69hjaKDI6vp1pk4wDyoQqfjURnRXheBIdxw9voqcHSJ0qGqgrDEAS2AE9Qrs0BUvyYDMCBQ2RkGyNXoDmvLQOmAr72eg5p-qxW" />
-                <span
-                    class="absolute top-4 left-4 bg-primary-container text-white px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Confort</span>
-            </div>
-            <div class="p-6">
-                <h3 class="font-headline-md text-headline-md mb-2">Automatización de Carril DIN</h3>
-                <p class="font-body-md text-body-md text-secondary mb-6">Módulos avanzados para el cuadro eléctrico.
-                    Control total de la iluminación y circuitos de potencia desde tu smartphone.</p>
-                <div class="flex items-center justify-between">
-                    <button
-                        class="bg-primary-container text-white px-6 py-3 rounded-lg font-label-md text-label-md smooth-transition hover:bg-primary active:scale-95 min-h-[48px]">Añadir</button>
-                    <button
-                        class="text-secondary hover:text-primary font-label-md text-label-md flex items-center gap-2">
-                        Ver detalles <span class="material-symbols-outlined">arrow_forward</span>
-                    </button>
-                </div>
-            </div>
-        </article>
-        <article class="catalog-item bg-white rounded-xl overflow-hidden card-shadow smooth-transition group"
-            data-category="confort">
-            <div class="h-64 overflow-hidden relative">
-                <img alt="Enchufes inteligentes"
-                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_hT8iaqsruVgnogSr7MAllA7SWiugAlzUkptVFVxaKofen57NksYk29BKMSy24htegaEpasjQcEzyivxT2ozk_7yYbG05iT_Xo7nggBt208OPBxEDTfJl_2rx1RamkaSOBXPlgdLLweQrq4Gs5eZ1w5GQ1prDHF2Q1qQT5qEANilj1D5Qy9SPkBxQwf2kO4YVjR8KYXaaeM5B3M-TZayXMEzLIX2yWJ4CZ3XodzzdMJrrfepWW3BQMr55wgtaOp3VVB8ZHPPPkQeh" />
-                <span
-                    class="absolute top-4 left-4 bg-primary-container text-white px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Confort</span>
-            </div>
-            <div class="p-6">
-                <h3 class="font-headline-md text-headline-md mb-2">Relés y Enchufes Inteligentes</h3>
-                <p class="font-body-md text-body-md text-secondary mb-6">Convierte cualquier electrodoméstico en
-                    inteligente. Control remoto, programación horaria y monitorización de consumo.</p>
-                <div class="flex items-center justify-between">
-                    <button
-                        class="bg-primary-container text-white px-6 py-3 rounded-lg font-label-md text-label-md smooth-transition hover:bg-primary active:scale-95 min-h-[48px]">Añadir</button>
-                    <button
-                        class="text-secondary hover:text-primary font-label-md text-label-md flex items-center gap-2">
-                        Ver detalles <span class="material-symbols-outlined">arrow_forward</span>
-                    </button>
-                </div>
-            </div>
-        </article>
-        <!-- Category: Salud -->
-        <article class="catalog-item bg-white rounded-xl overflow-hidden card-shadow smooth-transition group"
-            data-category="salud">
-            <div class="h-64 overflow-hidden relative">
-                <img alt="Control de temperatura"
-                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5MwRe5nH8N3VQa6158Vtl76Lu7aMP0m6As2q6Ofv-dnyFsvAUelXI3zCncizcYSoAYnVcv7n1LdfhWXg_1DRE_25lWg01hCn5N4KjF0SGeYTO6bbQ32VhqWXmK-1-hvEtMrkKnE2TsKdyUd8bPoHcT-j0EuLjnxUPbh92j9JcLf4xPpbiaA1eJHX-fFmKoltTL1ZZ6RG2_w5OuV7ZVnct9DoCCb9KyKguJ2FbzmaNgfKKIXZdz3xM2gc24ecdhTH-q0KDsnvTdAoi" />
-                <span
-                    class="absolute top-4 left-4 bg-primary-container text-white px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Salud</span>
-            </div>
-            <div class="p-6">
-                <h3 class="font-headline-md text-headline-md mb-2">Control de Temperatura</h3>
-                <p class="font-body-md text-body-md text-secondary mb-6">Sensores de alta precisión con bloqueo de
-                    seguridad. Mantén el ambiente ideal para tu salud y bienestar.</p>
-                <div class="flex items-center justify-between">
-                    <button
-                        class="bg-primary-container text-white px-6 py-3 rounded-lg font-label-md text-label-md smooth-transition hover:bg-primary active:scale-95 min-h-[48px]">Añadir</button>
-                    <button
-                        class="text-secondary hover:text-primary font-label-md text-label-md flex items-center gap-2">
-                        Ver detalles <span class="material-symbols-outlined">arrow_forward</span>
-                    </button>
-                </div>
-            </div>
-        </article>
-        <article class="catalog-item bg-white rounded-xl overflow-hidden card-shadow smooth-transition group"
-            data-category="salud">
-            <div class="h-64 overflow-hidden relative">
-                <img alt="Monitor de ruido"
-                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHcw4OtXDhYr_h9g8pkTgs00UdQ1xG14dMlpicArmqTUVxM-Sx6g1CoAQeJVo88cGd5HezW84NevTSgcWHG6vu4lpqFyw3XVfohXH0H2VoU_Ykis-87GMpIeIaKBKcp3zld7DbcBM0N18LwGiwA24J2oKZ6-IpS09EIcyDksEvl87Wvvfj1wMd6i2w7TKF9UomobTKhi9hEDmXBy0mCN7KPf3Go5JKdVRKYn55qTZ4wd_s0PnXaz1IwS4-YDYumUGHNBWv1ds3GEja" />
-                <span
-                    class="absolute top-4 left-4 bg-primary-container text-white px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Salud</span>
-            </div>
-            <div class="p-6">
-                <h3 class="font-headline-md text-headline-md mb-2">Monitorización Acústica</h3>
-                <p class="font-body-md text-body-md text-secondary mb-6">Control de decibelios con alertas inteligentes.
-                    Ideal para entornos que requieren tranquilidad y descanso garantizado.</p>
-                <div class="flex items-center justify-between">
-                    <button
-                        class="bg-primary-container text-white px-6 py-3 rounded-lg font-label-md text-label-md smooth-transition hover:bg-primary active:scale-95 min-h-[48px]">Añadir</button>
-                    <button
-                        class="text-secondary hover:text-primary font-label-md text-label-md flex items-center gap-2">
-                        Ver detalles <span class="material-symbols-outlined">arrow_forward</span>
-                    </button>
-                </div>
-            </div>
-        </article>
-        <!-- Category: Protección -->
-        <article class="catalog-item bg-white rounded-xl overflow-hidden card-shadow smooth-transition group"
-            data-category="proteccion">
-            <div class="h-64 overflow-hidden relative">
-                <img alt="Sensor de movimiento"
-                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqpOJvdPCjBqoJqK1URrlaLcvsijyd_e6ZZ7_Kv_Jxd2QYeWs5pSAC1PuEdfFurKRDSwHepY39Ki0uZlrJGi6KUqwvC5SPcS9ycW0VKSc_iRP8QM0zMFIX2njm6UZZ8PUyodIYJxHq_sRsM6YIkJjYb5kTtQoBnNihk40O67WjHx7LMaCGNuc6N2ElP7GU41ifb-oK_YcxKU5L7oIX0xctSRR5HuaNB297UR1IrlbRrIepKyK7ljeqFizr-U_i0ymKfNbt29_PBbTE" />
-                <span
-                    class="absolute top-4 left-4 bg-primary-container text-white px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Protección</span>
-            </div>
-            <div class="p-6">
-                <h3 class="font-headline-md text-headline-md mb-2">Detectores de Movimiento</h3>
-                <p class="font-body-md text-body-md text-secondary mb-6">Sensores infrarrojos de alta sensibilidad con
-                    tecnología antimascotas y avisos instantáneos al móvil.</p>
-                <div class="flex items-center justify-between">
-                    <button
-                        class="bg-primary-container text-white px-6 py-3 rounded-lg font-label-md text-label-md smooth-transition hover:bg-primary active:scale-95 min-h-[48px]">Añadir</button>
-                    <button
-                        class="text-secondary hover:text-primary font-label-md text-label-md flex items-center gap-2">
-                        Ver detalles <span class="material-symbols-outlined">arrow_forward</span>
-                    </button>
-                </div>
-            </div>
-        </article>
-        <article class="catalog-item bg-white rounded-xl overflow-hidden card-shadow smooth-transition group"
-            data-category="proteccion">
-            <div class="h-64 overflow-hidden relative">
-                <img alt="Sensor de inundación"
-                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuK_Rf0sHsLG0mzo97j-nqRflXUwYllLQxcwNzE7LH9uAJr8OovBkLCC3C0tAgECxDF6NWP7j3slprw4MwEPyPczTREsYutRXgDc0cL3f2VPA8HG9TVTYDCLdVHqGmpsACEhZj6mTgn2vNK4SsHRkimh_USrQMeRpzivYMlNL0BM77RAmHgNawSobsujR4m62jWsSHIf6Jtnhe8hr_c-Rlg-xegb6jBkCqn_aWLqhk6Ri8gvwMxosvYE5uBkMtyzvM0etfl5h4uAkK" />
-                <span
-                    class="absolute top-4 left-4 bg-primary-container text-white px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Protección</span>
-            </div>
-            <div class="p-6">
-                <h3 class="font-headline-md text-headline-md mb-2">Fuego e Inundación</h3>
-                <p class="font-body-md text-body-md text-secondary mb-6">Detección temprana de humos y fugas de agua.
-                    Actuación automática sobre válvulas de seguridad.</p>
-                <div class="flex items-center justify-between">
-                    <button
-                        class="bg-primary-container text-white px-6 py-3 rounded-lg font-label-md text-label-md smooth-transition hover:bg-primary active:scale-95 min-h-[48px]">Añadir</button>
-                    <button
-                        class="text-secondary hover:text-primary font-label-md text-label-md flex items-center gap-2">
-                        Ver detalles <span class="material-symbols-outlined">arrow_forward</span>
-                    </button>
-                </div>
-            </div>
-        </article>
-        <article class="catalog-item bg-white rounded-xl overflow-hidden card-shadow smooth-transition group"
-            data-category="proteccion">
-            <div class="h-64 overflow-hidden relative">
-                <img alt="Dispositivos de rastreo"
-                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBczwbiotmOQRXqzOcu0IsEE1WeNJiESq91QWg8AcW5qiwBGrzB3ohaG7J6wr-W4dgSCHxfd7MLql7Lgu8xbnx2QNXfegNWhpMdYdrerFtG9o27r5zbW3gUuSYiDEq73qedpKGZ2C2i3VNtQPeiu2vwECHfY5PTUNgMdtQ7fNCjvoV4wi9_7JPNoFZb-BRChrR0ENfmp5wt6iN3ucKyl5QT5hR6BV5pq1OaeZJAWS00GiNaumItDvsTIkLsJjMbuLpdmPKVaGSJEBuO" />
-                <span
-                    class="absolute top-4 left-4 bg-primary-container text-white px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Protección</span>
-            </div>
-            <div class="p-6">
-                <h3 class="font-headline-md text-headline-md mb-2">Rastreo y Caídas</h3>
-                <p class="font-body-md text-body-md text-secondary mb-6">Dispositivos portátiles con detección de caídas
-                    y localización GPS para la seguridad de los que más quieres.</p>
-                <div class="flex items-center justify-between">
-                    <button
-                        class="bg-primary-container text-white px-6 py-3 rounded-lg font-label-md text-label-md smooth-transition hover:bg-primary active:scale-95 min-h-[48px]">Añadir</button>
-                    <button
-                        class="text-secondary hover:text-primary font-label-md text-label-md flex items-center gap-2">
-                        Ver detalles <span class="material-symbols-outlined">arrow_forward</span>
-                    </button>
-                </div>
-            </div>
-        </article>
-        <!-- Category: Gestión -->
-        <article
-            class="catalog-item bg-white rounded-xl overflow-hidden card-shadow smooth-transition group lg:col-span-2"
-            data-category="gestion">
-            <div class="flex flex-col md:flex-row h-full">
-                <div class="md:w-1/2 overflow-hidden relative">
-                    <img alt="Panel de control central"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwvebGmNznNBWqrTQ3hvwbbrNBZxuqsGRtgtlqqkmcD0MwTCq3HRN7h6sE7qBtJUTCFdsZ7NxW0uWRX0P4n3-iK4nfJdLEinTe4EQAinaFifG6ruzLByN3ZE31HKQBFk7YnMvIRrlMhowUKllGZMPVPD9-Mq6C6-VNwS7z3US67PgRiYEN85Q0JufI4GT8gknCKIopInO38Jm9RhTG-VJVuXbq_8b1XMoJ9trjQuo6Ieu-MyLbgYYLuJWh-LvmHOo9XqOah9m3vBG-" />
-                    <span
-                        class="absolute top-4 left-4 bg-primary-container text-white px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Gestión</span>
-                </div>
-                <div class="p-8 md:w-1/2 flex flex-col justify-center">
-                    <h3 class="font-headline-lg text-headline-lg mb-4">Consola Home 2.0</h3>
-                    <p class="font-body-lg text-body-lg text-secondary mb-8">El cerebro de tu hogar. Centraliza todos
-                        tus dispositivos en una interfaz táctil intuitiva, accesible y personalizada.</p>
-                    <div class="flex flex-wrap gap-4">
-                        <button
-                            class="bg-primary-container text-white px-8 py-4 rounded-lg font-label-md text-label-md smooth-transition hover:bg-primary active:scale-95 min-h-[48px]">Configurar
-                            sistema</button>
-                        <button
-                            class="border-2 border-secondary text-secondary px-8 py-4 rounded-lg font-label-md text-label-md smooth-transition hover:bg-secondary hover:text-white active:scale-95 min-h-[48px]">Más
-                            información</button>
-                    </div>
-                </div>
-            </div>
-        </article>
+        }
+
     </div>
 </main>
-<script>
-    function filterCatalog(category) {
-        const items = document.querySelectorAll('.catalog-item');
-        const buttons = document.querySelectorAll('.filter-btn');
-
-        // Actualizar botones
-        buttons.forEach(btn => {
-            btn.classList.remove('active-filter', 'bg-primary-container', 'text-white');
-            btn.classList.add('bg-white', 'text-on-surface-variant');
-
-            if (category === 'all' && btn.innerText.toLowerCase() === 'todos') {
-                btn.classList.add('active-filter');
-            } else if (btn.innerText.toLowerCase().includes(category)) {
-                btn.classList.add('active-filter');
-            }
-        });
-
-        // Filtrar items
-        items.forEach(item => {
-            const itemCategory = item.getAttribute('data-category');
-            if (category === 'all' || itemCategory === category) {
-                item.style.display = 'block';
-                item.classList.add('animate-in', 'fade-in', 'duration-500');
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    }
-
-    // Animación suave de entrada para los elementos
-    document.addEventListener('DOMContentLoaded', () => {
-        const items = document.querySelectorAll('.catalog-item');
-        items.forEach((item, index) => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(20px)';
-            setTimeout(() => {
-                item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-            }, index * 100);
-        });
-    });
-</script>

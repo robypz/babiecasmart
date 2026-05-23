@@ -56,7 +56,7 @@
             "Ecosistema Babieca"
         ],
         "products": [
-            "noise_control-1.png"
+            "noise-control-1.png"
         ]
     },
     {
@@ -68,9 +68,8 @@
             "Detector de caída"
         ],
         "products": [
-            "moving_control-1.png",
-            "moving_control-2.png",
-            "moving_control-3.png"
+            "moving-control-1.png",
+            "moving-control-2.png"
         ]
     },
     {
