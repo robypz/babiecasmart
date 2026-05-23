@@ -26,3 +26,9 @@
             background-color: #e87b1b;
             color: white;
         }
+
+        .description {
+            -webkit-line-clamp: 3;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }

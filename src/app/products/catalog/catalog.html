@@ -1,8 +1,10 @@
-<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 px-4">
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 px-12">
     <!-- Header Section -->
     <header class="mb-12">
-        <h1 class="font-display-lg text-display-lg text-on-surface mb-4">Catálogo de Soluciones</h1>
-        <p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+        <h1
+            class="max-w-2xl mb-6 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-secondary">
+            Catálogo de Soluciones</h1>
+        <p class="max-w-2xl mb-8 font-light text-gray-500 lg:mb-10 md:text-lg lg:text-xl">
             Tecnología diseñada para entender y responder a tus necesidades. Explora nuestro ecosistema modular para
             un hogar más seguro, saludable y autónomo.
         </p>
@@ -18,31 +20,31 @@
 
     </nav>
     <!-- Products Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="catalog-grid">
-        @for (product of products(); track $index) {
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="catalog-grid">
+        @for (category of categories(); track $index) {
+        @for (product of category.products; track $index) {
         <article class="catalog-item bg-white rounded-xl overflow-hidden card-shadow smooth-transition group"
             data-category="seguridad">
             <div class="h-64 overflow-hidden relative">
                 <img alt="Cerradura inteligente"
-                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    [src]="'/images/products/'+product"
-                    class="absolute top-4 left-4 bg-primary-container text-white px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider">Seguridad
+                    class="w-100 h-full  group-hover:scale-110 transition-transform duration-500"
+                    [src]="'/images/products/'+product">
             </div>
             <div class="p-6">
-                <h3 class="font-headline-md text-headline-md mb-2">Accesos Inteligentes</h3>
-                <p class="font-body-md text-body-md text-secondary mb-6">Teclados numéricos y cerraduras
-                    inteligentes con control remoto. Gestión de usuarios y registros de entrada en tiempo real.</p>
-                <div class="flex items-center justify-between">
+                <h3 class="font-headline-md text-headline-md mb-2">{{category.name}}</h3>
+                <p class="font-body-md text-body-md text-secondary mb-6 overflow-hidden text-ellipsis description">
+                    {{category.description ||
+                    "Solución
+                    Personalizada"}}</p>
+                <div class="flex items-center justify-end">
                     <button
-                        class="bg-primary-container text-white px-6 py-3 rounded-lg font-label-md text-label-md smooth-transition hover:bg-primary active:scale-95 min-h-[48px]">Añadir</button>
-                    <button
-                        class="text-secondary hover:text-primary font-label-md text-label-md flex items-center gap-2">
-                        Ver detalles <span class="material-symbols-outlined">arrow_forward</span>
-                    </button>
+                        class="bg-white text-primary px-6 py-3 rounded-lg font-label-md text-label-md smooth-transition hover:bg-primary hover:text-white border-2 border-primary active:scale-95 min-h-[48px]">Añadir</button>
                 </div>
             </div>
         </article>
         }
+        }
+
 
     </div>
 </main>
