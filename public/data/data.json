@@ -1,147 +1,145 @@
-{
-    "categories": [
-        {
-            "name": "Cámaras de seguridad",
-            "description": null,
-            "features": [
-                "HD 1080p",
-                "Visión nocturna",
-                "Detección de movimiento",
-                "Alarma",
-                "App Control",
-                "Grabación local/Nube",
-                "Audio bidireccional",
-                "Ecosistema Babieca"
-            ],
-            "products": [
-                "camera.png"
-            ]
-        },
-        {
-            "name": "Relés inteligentes",
-            "description": "Capaces de interactuar con cualquier dispositivo, nos brindan posibilidades tan amplias como el encendido de luces, enchufes, activación de alarmas e incluso aperturas remotas.",
-            "features": [
-                "Wifi",
-                "Mando a distancia",
-                "APP Control",
-                "Compatible con Alexa",
-                "Ecosistema Babieca"
-            ],
-            "products": [
-                "reles-inteligentes.png"
-            ]
-        },
-        {
-            "name": "Control de temperatura",
-            "description": "Con nuestros sistemas de control de temperatura podrás establecer rutinas, programaciones y controlar la temperatura de tu hogar desde cualquier lugar. Además, dispone de un sistema de bloqueo para que nadie pueda manipular el termostato sin tu autorización, e incluso configurarlo para que la calefacción o aire acondicionado se apaguen al abrir una ventana entre otras muchas posibilidades.",
-            "features": [
-                "Wifi",
-                "APP Control",
-                "Compatible con Alexa",
-                "Ecosistema Babieca"
-            ],
-            "products": [
-                "temp_control-1.png",
-                "temp_control-2.png",
-                "temp_control-3.png",
-                "temp_control-4.png"
-            ]
-        },
-        {
-            "name": "Control de ruido",
-            "description": "Con nuestros sistemas de control de sonido, serás capaz de monitorear el nivel de ruido en tu hogar de forma remota y podrás recibir alertas en tu móvil ante umbrales de decibelios preestablecidos, golpes o gritos.",
-            "features": [
-                "Wifi",
-                "APP Control",
-                "Compatible con Alexa",
-                "Ecosistema Babieca"
-            ],
-            "products": [
-                "noise_control-1.png"
-            ]
-        },
-        {
-            "name": "Control de movimiento",
-            "description": "Somos capaces de integrar en tu sistema detectores de movimiento, de presión o de caída. De esta forma, podrás estar prevenido y proteger lo que más te importa recibiendo alertas instantáneas, o integrándose en tu Ecosistema Babieca para que tras una detección, se ponga en marcha cualquier mecanismo de tu elección.",
-            "features": [
-                "Detector de movimiento",
-                "Detector de presión",
-                "Detector de caída"
-            ],
-            "products": [
-                "moving_control-1.png",
-                "moving_control-2.png",
-                "moving_control-3.png"
-            ]
-        },
-        {
-            "name": "Prevención y protección",
-            "description": null,
-            "features": [
-                "Detección de incendios",
-                "Detección de inundación",
-                "Dispositivos de rastreo"
-            ],
-            "products": [
-                "fire-dect.png",
-                "flood-detc.png",
-                "track-dev.png"
-            ]
-        },
-        {
-            "name": "Interruptores/Enchufes",
-            "description": "Con una instalación sencilla e intuitiva podrás disfrutar de todas las ventajas de la domótica para cualquier electrodoméstico de tu casa.",
-            "features": [
-                "Wifi",
-                "Control de consumo",
-                "APP Control",
-                "Compatible con Alexa",
-                "Ecosistema Babieca"
-            ],
-            "products": [
-                "switch.png",
-                "plug.png"
-            ]
-        },
-        {
-            "name": "Sistemas carril DIN",
-            "description": null,
-            "features": [
-                "Control de consumo",
-                "Apagado/encendido remoto",
-                "Rearme automático",
-                "Programación horaria",
-                "Inicio retardado/desencadenado",
-                "Wifi",
-                "APP Control",
-                "Compatible con Alexa",
-                "Ecosistema Babieca"
-            ],
-            "products": [
-                "din-carril-sistem.png"
-            ]
-        },
-        {
-            "name": "Panel de control",
-            "description": "Y si lo deseas, podemos hacer del tuyo un hogar 2.0, instalando una consola central para gestionar todo desde un único lugar.",
-            "features": [],
-            "products": [
-                "control-panel.png"
-            ]
-        },
-        {
-            "name": "Control de acceso",
-            "description": "Para todo tipo de puertas...",
-            "features": [
-                "Teclados numéricos",
-                "Cerraduras con manilla",
-                "Cilindros"
-            ],
-            "products": [
-                "access-control-1.png",
-                "access-control-2.png",
-                "access-control-3.png"
-            ]
-        }
-    ]
-}
+[
+    {
+        "name": "Cámaras de seguridad",
+        "description": null,
+        "features": [
+            "HD 1080p",
+            "Visión nocturna",
+            "Detección de movimiento",
+            "Alarma",
+            "App Control",
+            "Grabación local/Nube",
+            "Audio bidireccional",
+            "Ecosistema Babieca"
+        ],
+        "products": [
+            "camera.png"
+        ]
+    },
+    {
+        "name": "Relés inteligentes",
+        "description": "Capaces de interactuar con cualquier dispositivo, nos brindan posibilidades tan amplias como el encendido de luces, enchufes, activación de alarmas e incluso aperturas remotas.",
+        "features": [
+            "Wifi",
+            "Mando a distancia",
+            "APP Control",
+            "Compatible con Alexa",
+            "Ecosistema Babieca"
+        ],
+        "products": [
+            "reles-inteligentes.png"
+        ]
+    },
+    {
+        "name": "Control de temperatura",
+        "description": "Con nuestros sistemas de control de temperatura podrás establecer rutinas, programaciones y controlar la temperatura de tu hogar desde cualquier lugar. Además, dispone de un sistema de bloqueo para que nadie pueda manipular el termostato sin tu autorización, e incluso configurarlo para que la calefacción o aire acondicionado se apaguen al abrir una ventana entre otras muchas posibilidades.",
+        "features": [
+            "Wifi",
+            "APP Control",
+            "Compatible con Alexa",
+            "Ecosistema Babieca"
+        ],
+        "products": [
+            "temp_control-1.png",
+            "temp_control-2.png",
+            "temp_control-3.png",
+            "temp_control-4.png"
+        ]
+    },
+    {
+        "name": "Control de ruido",
+        "description": "Con nuestros sistemas de control de sonido, serás capaz de monitorear el nivel de ruido en tu hogar de forma remota y podrás recibir alertas en tu móvil ante umbrales de decibelios preestablecidos, golpes o gritos.",
+        "features": [
+            "Wifi",
+            "APP Control",
+            "Compatible con Alexa",
+            "Ecosistema Babieca"
+        ],
+        "products": [
+            "noise_control-1.png"
+        ]
+    },
+    {
+        "name": "Control de movimiento",
+        "description": "Somos capaces de integrar en tu sistema detectores de movimiento, de presión o de caída. De esta forma, podrás estar prevenido y proteger lo que más te importa recibiendo alertas instantáneas, o integrándose en tu Ecosistema Babieca para que tras una detección, se ponga en marcha cualquier mecanismo de tu elección.",
+        "features": [
+            "Detector de movimiento",
+            "Detector de presión",
+            "Detector de caída"
+        ],
+        "products": [
+            "moving_control-1.png",
+            "moving_control-2.png",
+            "moving_control-3.png"
+        ]
+    },
+    {
+        "name": "Prevención y protección",
+        "description": null,
+        "features": [
+            "Detección de incendios",
+            "Detección de inundación",
+            "Dispositivos de rastreo"
+        ],
+        "products": [
+            "fire-dect.png",
+            "flood-detc.png",
+            "track-dev.png"
+        ]
+    },
+    {
+        "name": "Interruptores/Enchufes",
+        "description": "Con una instalación sencilla e intuitiva podrás disfrutar de todas las ventajas de la domótica para cualquier electrodoméstico de tu casa.",
+        "features": [
+            "Wifi",
+            "Control de consumo",
+            "APP Control",
+            "Compatible con Alexa",
+            "Ecosistema Babieca"
+        ],
+        "products": [
+            "switch.png",
+            "plug.png"
+        ]
+    },
+    {
+        "name": "Sistemas carril DIN",
+        "description": null,
+        "features": [
+            "Control de consumo",
+            "Apagado/encendido remoto",
+            "Rearme automático",
+            "Programación horaria",
+            "Inicio retardado/desencadenado",
+            "Wifi",
+            "APP Control",
+            "Compatible con Alexa",
+            "Ecosistema Babieca"
+        ],
+        "products": [
+            "din-carril-sistem.png"
+        ]
+    },
+    {
+        "name": "Panel de control",
+        "description": "Y si lo deseas, podemos hacer del tuyo un hogar 2.0, instalando una consola central para gestionar todo desde un único lugar.",
+        "features": [],
+        "products": [
+            "control-panel.png"
+        ]
+    },
+    {
+        "name": "Control de acceso",
+        "description": "Para todo tipo de puertas...",
+        "features": [
+            "Teclados numéricos",
+            "Cerraduras con manilla",
+            "Cilindros"
+        ],
+        "products": [
+            "access-control-1.png",
+            "access-control-2.png",
+            "access-control-3.png"
+        ]
+    }
+]

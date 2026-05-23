@@ -6,94 +6,47 @@
                 de la innovación inteligente y accesible.</p>
         </div>
         <div class="grid gap-8 lg:grid-cols-2 mb-8">
-            <!-- Security -->
+            @for (category of categories(); track $index) {
             <article
-                class="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row items-center gap-8 group hover:shadow-md transition-shadow">
-                <div class="md:w-1/2">
-                    <span
-                        class="bg-primary/10 text-primary text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">Seguridad
-                        Avanzada</span>
-                    <h3 class="mb-2 text-2xl font-bold tracking-tight text-secondary">Seguridad</h3>
-                    <p class="mb-5 font-light text-gray-500">Cámaras HD 1080p, visión nocturna y control de acceso
-                        inteligente
-                        para tu tranquilidad total.</p>
-                    <div class="flex gap-4">
-                        <span class="material-symbols-outlined text-primary">videocam</span>
-                        <span class="material-symbols-outlined text-primary">lock</span>
-                        <span class="material-symbols-outlined text-primary">visibility</span>
+                class="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row items-stretch gap-8 group hover:shadow-lg transition-all duration-300">
+                <div class="md:w-1/2 flex flex-col justify-between">
+                    <div>
+                        <span
+                            class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">
+                            Solución
+                        </span>
+                        <h3
+                            class="mb-3 text-2xl font-bold tracking-tight text-secondary group-hover:text-primary transition-colors">
+                            {{ category.name }}
+                        </h3>
+                        <p class="mb-5 font-light text-gray-500 leading-relaxed">
+                            {{ category.description || 'Solución inteligente personalizada para automatizar y mejorar la
+                            comodidad y seguridad de tu hogar.' }}
+                        </p>
                     </div>
                 </div>
-                <div class="md:w-1/2 overflow-hidden rounded-xl">
-                    <img alt="Security System"
-                        class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDGjVGBdZJNW03K_uXvSwt_IXfieyOHjbvAS9dVSNtoFVHZGygStYwPbjGaigVakzuOI5g2G9BM47v7Tz0cYgO7o0WttHyctTnmKGyYkV5i718yJHJ3__zO7BQrM6r-iz7GTxWikyUfV8_boLtkGBX1TUJkrlSrLRAgc7bff8JnnW_AkESa-fy57OJOR3spoAcks5sakwmUUVcO7sn9B-OSAsz8h6N94n5hKrRV5Gj8k2WG8LmOQJk4oLg4sJ2zCUwNslhgC2IHzv9" />
+                <div class="md:w-1/2 w-full bg-gray-50/80 rounded-2xl p-6 flex flex-col border border-gray-100/50">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-4 flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-sm text-gray-400">tune</span>
+                        Características
+                    </h4>
+                    <div class="grid grid-cols-1 gap-3.5 my-auto">
+                        @for (feature of category.features; track $index) {
+                        <div class="flex items-start gap-2.5">
+                            <span
+                                class="material-symbols-outlined text-primary text-lg flex-shrink-0 select-none">check_circle</span>
+                            <span class="text-sm font-medium text-secondary/90 leading-snug">{{ feature }}</span>
+                        </div>
+                        } @empty {
+                        <div class="text-sm font-light text-gray-400 italic flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-sm">construction</span>
+                            Configuración 100% personalizada
+                        </div>
+                        }
+                    </div>
                 </div>
             </article>
-            <!-- Health -->
-            <article
-                class="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row items-center gap-8 group hover:shadow-md transition-shadow">
-                <div class="md:w-1/2">
-                    <span
-                        class="bg-primary/10 text-primary text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">Salud</span>
-                    <h3 class="mb-2 text-2xl font-bold tracking-tight text-secondary">Salud y Entorno</h3>
-                    <p class="mb-5 font-light text-gray-500">Tu hogar siempre a la temperatura perfecta y protegido de
-                        ruidos
-                        externos.</p>
-                </div>
-                <div class="md:w-1/2 overflow-hidden rounded-xl bg-gray-100 p-4">
-                    <img alt="Temperature Control"
-                        class="w-full h-40 object-contain group-hover:scale-105 transition-transform duration-500"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAspSa6DnWev0QwsUP8uumi7Fh-NIZVnejyYGXnYPa6TZ3PIsBd0FKZWj9YfXzgowsf9mKkOkTVPZu0awmrOAyHuiUL-2AQKrj290BCs4xt7rTgosN64Abn7VL2ETLN-vxFX1Mqr0MwbLnqGWaQbDMCpKi70oB5QYgE_OLq0GJ8pQ9rb5JzZ704i9LfhIrTE4KEcdrm1b6--JX5yplI2C7ujb3YqmiQIGLYUxoFvpBlmVBldyvzn-dVpNX0XV5SUuY8eXEYkMMo3JUb" />
-                </div>
-            </article>
-        </div>
-        <div class="grid gap-8 lg:grid-cols-3">
-            <!-- Comfort -->
-            <article
-                class="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm flex flex-col group hover:shadow-md transition-shadow">
-                <span
-                    class="bg-primary/10 text-primary text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-4 w-fit">Hogar
-                    Digital</span>
-                <h3 class="mb-2 text-2xl font-bold tracking-tight text-secondary">Confort y Automatización</h3>
-                <p class="mb-6 font-light text-gray-500">Controla cualquier electrodoméstico de forma remota y
-                    programada.
-                </p>
-                <div class="mt-auto bg-gray-100 rounded-xl p-6">
-                    <img alt="Smart Device"
-                        class="w-full h-32 object-contain group-hover:scale-110 transition-transform"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9tBAIz_vwnGzYh7ejeBeuz49OkWXkYHLHaupUwJddT5Y6g6oL8i_FoTT5GRUOCGYuFoi2_GnGphPv-ACKOaf8xiU91_cKRCcEUXWw_2ElHXcEkYJ9Iz4yQh8bYUqu-S8j9-YaU5RQqNsLJdqKktZwyoWIqzeD9Ob1seTQAm5sTnYqT4of-iUJg0fmzpUcSOkQnFHIBRfJ5hySpNrzlZiVnDp92AvPKdtx0SKT30ESKesjvk4yyl3Rw0LkgDbkXlXRxUgj6UfNSZWP" />
-                </div>
-            </article>
-            <!-- Protection -->
-            <article
-                class="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm flex flex-col group hover:shadow-md transition-shadow">
-                <span
-                    class="bg-primary/10 text-primary text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-4 w-fit">Emergencia</span>
-                <h3 class="mb-2 text-2xl font-bold tracking-tight text-secondary">Protección Activa</h3>
-                <p class="mb-6 font-light text-gray-500">Detectores de caídas, incendios e inundaciones. Cuidamos de lo
-                    que
-                    más importa.</p>
-                <div class="mt-auto bg-gray-100 rounded-xl p-6 flex items-center justify-center">
-                    <img alt="Fire/Flood Detection" class="w-full h-32 object-contain"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC09SNoeII7NTSFewTFNoHO6nfspMkBpN0lSYolUTr_95R620BLinCCK1wALDz-xJNaM8I6nEovBYVEx4tW9B01KSaqv635667u6k3PO8wWDMz-Jxwn5EYvCiKD-VESrXzeOKd7OKGXDYdIJr9R6EaJB9znzttONQbhcnR_m08RBW7KFn9yZy3HqPCgpCJ8xH6FGcgIF4h2eQlvWRPQQ9zph2RAt0hkR0LcDJ41KeTi0KUjrrAx_0gvnFjn0C_oIZIPfmCoT3LYrOAH" />
-                </div>
-            </article>
-            <!-- Management -->
-            <article
-                class="p-8 bg-secondary rounded-3xl border border-gray-800 shadow-xl flex flex-col text-white lg:col-span-1 group">
-                <span
-                    class="bg-primary/20 text-primary text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-4 w-fit">Control
-                    Maestro</span>
-                <h3 class="mb-2 text-2xl font-bold tracking-tight">Gestión Centralizada</h3>
-                <p class="mb-6 font-light text-gray-400">Visualiza consumos, estados y alarmas en tiempo real desde una
-                    consola única.</p>
-                <div
-                    class="mt-auto bg-white/5 rounded-xl p-6 flex items-center justify-center relative overflow-hidden">
-                    <img alt="Control Panel"
-                        class="h-32 object-contain relative z-10 group-hover:scale-105 transition-transform"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC84eEeFmaRUCa6wtM5AFV7cRQEM3SYe22mXxCW03iR9iiHbi59qCUmZT1QENruT-91iVsG3ADr8DKRpiw4nHen-rAelNbk3cj4NvqZOvh_EO1m3sQhHSTqBGJzpDPEPi-ujfYGUpKpzZ335npdRYdeYKEmocn56D-Cr0RBi-ELHDHLXcf1uk7z8Ghef7UDHB8Fp1sihKnTepdwbBHIPw4y0t9nASwgLL7_y0eIAH3XzleIz6Omb34u3lYAMBTeW_aN5zUNtaj4ZxwB" />
-                </div>
-            </article>
+            }
         </div>
     </div>
 </section>
