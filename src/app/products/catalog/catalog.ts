@@ -22,6 +22,7 @@ export class Catalog implements OnInit {
   }
 
   loadAllProducts() {
+    this.products.set([]);
     this.categories().forEach((category) => {
       this.products.update((value) => value.concat(category.products));
     });
