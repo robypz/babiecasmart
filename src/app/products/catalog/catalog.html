@@ -12,7 +12,7 @@
     <!-- Category Filter -->
     <nav aria-label="Filtros de catálogo" class="flex flex-wrap gap-3 mb-12">
         @for (category of categories(); track $index) {
-        <button
+        <button (click)="filter(category.name,$event)"
             class="filter-btn hover:bg-primary hover:text-on-primary px-6 py-3 rounded-full font-label-md text-label-md border-2 border-primary-container smooth-transition hover:scale-105 active:scale-95">
             {{ category.name }}
         </button>
@@ -21,8 +21,8 @@
     </nav>
     <!-- Products Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="catalog-grid">
-        @for (category of categories(); track $index) {
-        @for (product of category.products; track $index) {
+
+        @for (product of products(); track $index) {
         <article class="catalog-item bg-white rounded-xl overflow-hidden card-shadow smooth-transition group"
             data-category="seguridad">
             <div class="h-64 overflow-hidden relative">
@@ -31,18 +31,16 @@
                     [src]="'/images/products/'+product">
             </div>
             <div class="p-6">
-                <h3 class="font-headline-md text-headline-md mb-2">{{category.name}}</h3>
+                <h3 class="font-headline-md text-headline-md mb-2"></h3>
                 <p class="font-body-md text-body-md text-secondary mb-6 overflow-hidden text-ellipsis description">
-                    {{category.description ||
-                    "Solución
-                    Personalizada"}}</p>
+
+                </p>
                 <div class="flex items-center justify-end">
                     <button
                         class="bg-white text-primary px-6 py-3 rounded-lg font-label-md text-label-md smooth-transition hover:bg-primary hover:text-white border-2 border-primary active:scale-95 min-h-[48px]">Añadir</button>
                 </div>
             </div>
         </article>
-        }
         }
 
 
