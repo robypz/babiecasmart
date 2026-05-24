@@ -1,14 +1,14 @@
-<main class="min-h-screen">
+<main class="min-h-screen px-4 max-w-screen-xl mx-auto">
     <!-- Hero Section -->
     <section class="relative pt-16 pb-12 md:pt-24 md:pb-20 overflow-hidden">
         <div
             class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-center md:text-left">
             <div class="max-w-3xl">
                 <h1
-                    class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-6 leading-tight">
+                    class="max-w-2xl mb-6 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-secondary">
                     Estamos aquí para escucharte
                 </h1>
-                <p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                <p class="max-w-2xl mb-8 font-light text-gray-500 lg:mb-10 md:text-lg lg:text-xl">
                     Cuéntanos cómo podemos ayudarte a crear un hogar que se adapte a ti. Nuestro equipo de expertos
                     está listo para diseñar tu experiencia de vida inteligente.
                 </p>
@@ -23,7 +23,11 @@
     <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-24">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
             <!-- Contact Form Card -->
-            <app-email></app-email>
+            <div
+                class="lg:col-span-7 bg-white p-8 md:p-12 rounded-xl level-1-shadow border border-surface-container-high">
+                <app-email></app-email>
+            </div>
+
             <!-- Direct Channels Sidebar -->
             <div class="lg:col-span-5 flex flex-col gap-6">
                 <!-- WhatsApp Card -->
