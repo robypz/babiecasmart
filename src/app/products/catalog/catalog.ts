@@ -52,4 +52,21 @@ export class Catalog implements OnInit {
     this.btn = element;
   }
 
+  consult(product: Product) {
+    let category = this.categories().find((category) =>
+      category.products.includes(product)
+    );
+    if (category) {
+      this.createWhatsappMessage(category, product);
+    }
+  }
+
+  createWhatsappMessage(category: Category, product: Product) {
+    const phoneNumber = '34613568900';
+    const productImage = `${window.location.origin}/images/products/${product}`;
+    const message = `Hola, estoy interesado en un producto de la categoría "${category.name}".\nMiniatura del producto: ${productImage}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  }
+
 }
